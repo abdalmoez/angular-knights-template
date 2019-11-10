@@ -1,0 +1,15 @@
+<form #subscribeForm="ngForm" action="#" class="subscribe-form" (ngSubmit)="subscribe()">
+    <div class="form-group d-flex">
+        
+        <input type="text" class="form-control" [formControl]="emailForm" required placeholder="Enter email address">
+        <input type="submit" value="Subscribe" class="submit px-3">
+        <div *ngIf="emailForm.invalid && (emailForm.dirty || emailForm.touched)" class="alert alert-danger">
+                <div *ngIf="emailForm.errors.required">
+                    Email is required.
+                </div>
+                <div *ngIf="emailForm.errors.email">
+                    Please enter a valid email.
+                </div>
+            </div>
+    </div>
+</form>
